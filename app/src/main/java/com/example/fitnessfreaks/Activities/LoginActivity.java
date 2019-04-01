@@ -1,7 +1,9 @@
-package com.example.fitnessfreaks;
+package com.example.fitnessfreaks.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.fitnessfreaks.R;
 
 public class LoginActivity extends AppCompatActivity {
 
