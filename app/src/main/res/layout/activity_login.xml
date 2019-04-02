@@ -8,6 +8,7 @@
     android:background="@drawable/log">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
@@ -15,6 +16,8 @@
         android:layout_marginTop="200dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
+        android:layout_marginBottom="353dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Login"
+            android:background="@drawable/roundbutton"
+            android:text="   sign in   "
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -70,8 +74,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Forgot Password ?"
             android:textColor="#FF65E22B"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LogIn" />
 
@@ -83,11 +93,46 @@
             android:layout_marginLeft="13dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="New Members"
+            android:text="New Member    |"
             android:textColor="#FF65E22B"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/forgotPass"
             app:layout_constraintEnd_toStartOf="@+id/forgotPass"
             app:layout_constraintStart_toStartOf="parent" />
     </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:drawableLeft="@drawable/mail"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:id="@+id/loginGmailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/gmail"
+        android:text="Continue with Gmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <Button
+        android:id="@+id/loginFacebookButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/facebook"
+        android:drawableLeft="@drawable/face"
+        android:drawablePadding="10dp"
+        android:paddingLeft="10dp"
+
+        android:text="Continue wtih facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginGmailButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
