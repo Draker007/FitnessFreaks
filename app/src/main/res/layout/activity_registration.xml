@@ -31,7 +31,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:drawableLeft="@drawable/mail"
+            android:drawableLeft="@drawable/gmailicon"
             android:text="   Sign up with Gmail   "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

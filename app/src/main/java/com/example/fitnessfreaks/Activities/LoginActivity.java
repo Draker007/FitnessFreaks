@@ -24,11 +24,11 @@ private TextView newMember , forgotPass;
 
 
     private void InitializeUI(){
-       // Login = (Button) findViewById(R.id.LogIn);
-       // Gmail = (Button) findViewById(R.id.loginGmailButton);
-       // Facebook= (Button)findViewById(R.id.loginFacebookButton);
+        Login = (Button) findViewById(R.id.LogIn);
+        Gmail = (Button) findViewById(R.id.loginGmailButton);
+        Facebook= (Button)findViewById(R.id.loginFacebookButton);
         newMember = (TextView)findViewById(R.id.newMember);
-       // forgotPass =(TextView)findViewById(R.id.forgotPass);
+        forgotPass =(TextView)findViewById(R.id.forgotPass);
 
     }
 
