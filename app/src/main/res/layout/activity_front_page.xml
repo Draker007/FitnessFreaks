@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".frontPageActivity">
+    tools:context=".Activities.frontPageActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="395dp"
@@ -213,7 +213,7 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/Calves">
+                android:background="@drawable/calves">
 
                 <TextView
                     android:id="@+id/textView9"

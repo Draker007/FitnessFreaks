@@ -115,25 +115,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.574"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginGmailButton" />
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
 
-        <Button
-            android:id="@+id/loginGmailButton"
-            android:layout_width="wrap_content"
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="@drawable/gmail"
-            android:drawableLeft="@drawable/gmailicon"
-            android:drawablePadding="10dp"
-            android:paddingLeft="10dp"
-            android:text="continue with gmail"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.58"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/forgotPass" />
+
 
     </android.support.constraint.ConstraintLayout>
 
