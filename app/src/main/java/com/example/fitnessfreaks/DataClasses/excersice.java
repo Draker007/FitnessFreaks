@@ -1,24 +1,34 @@
 package com.example.fitnessfreaks.DataClasses;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
 public class excersice {
-    String excersiceImage;
+  //  String excersiceImage;
     String excersiceName;
+    String id;
+    public excersice(String excersiceName, String id) {
+        this.excersiceName = excersiceName;
+        this.id = id;
+    }
 
-    public excersice(String excersiceImage, String excersiceName) {
-        this.excersiceImage = excersiceImage;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public excersice(String excersiceName) {
+       // this.excersiceImage = excersiceImage;
         this.excersiceName = excersiceName;
     }
 
-    public String getExcersiceImage() {
-        return excersiceImage;
-    }
+//    public String getExcersiceImage() {
+//        return excersiceImage;
+//    }
 
-    public void setExcersiceImage(String excersiceImage) {
-        this.excersiceImage = excersiceImage;
-    }
+//    public void setExcersiceImage(String excersiceImage) {
+//        this.excersiceImage = excersiceImage;
+//    }
 
     public String getExcersiceName() {
         return excersiceName;

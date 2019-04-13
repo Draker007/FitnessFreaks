@@ -7,8 +7,8 @@
     tools:context=".Activities.frontPageActivity">
 
     <android.support.v4.widget.NestedScrollView
-        android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,12 +18,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/biceps_layout"
                 android:layout_width="match_parent"
-                android:background="@drawable/arms"
-                android:layout_height="150dp">
+                android:layout_height="150dp"
+                android:background="@drawable/arms">
 
                 <TextView
                     android:id="@+id/textView"
@@ -206,6 +207,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </android.support.constraint.ConstraintLayout>
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp" />

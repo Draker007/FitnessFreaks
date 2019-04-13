@@ -16,44 +16,59 @@ import java.util.List;
 
 public class excersiceAdapter extends RecyclerView.Adapter<excersiceAdapter.MyViewHolder> {
 
-        Context mcontext;
+
         private List<excersice> excersices;
+        private OnExcersiceListener onExcersiceListener;
 
 
-    public excersiceAdapter(Context mcontext, List<excersice> excersices) {
-        this.mcontext = mcontext;
+
+    public excersiceAdapter( List<excersice> excersices , OnExcersiceListener onExcersiceListener) {
+
         this.excersices = excersices;
+        this.onExcersiceListener = onExcersiceListener;
+
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v;
-        v = LayoutInflater.from(mcontext).inflate(R.layout.exercise_recycler,viewGroup,false);
-        MyViewHolder viewHolder = new MyViewHolder(v);
+        v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.exercise_recycler,viewGroup,false);
+        MyViewHolder viewHolder = new MyViewHolder(v,onExcersiceListener);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-    myViewHolder.excersiceName.setText(excersices.get(i).getExcersiceName());
+        excersice excersice = excersices.get(i);
+    myViewHolder.excersiceName.setText(excersice.getExcersiceName());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return excersices.size();
     }
 
-    public static class  MyViewHolder extends  RecyclerView.ViewHolder{
+    public static class  MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
     ImageView excersiceImage;
     TextView excersiceName;
-        public MyViewHolder(@NonNull View itemView) {
+    OnExcersiceListener onExcersiceListener;
+        public MyViewHolder(@NonNull View itemView,OnExcersiceListener onExcersiceListener) {
             super(itemView);
             excersiceImage = itemView.findViewById(R.id.exerciseImage);
             excersiceName = itemView.findViewById(R.id.exerciseName);
+            this.onExcersiceListener = onExcersiceListener;
+            itemView.setOnClickListener(this);
+       }
 
-
+        @Override
+        public void onClick(View v) {
+            onExcersiceListener.onExcersiceClick(getAdapterPosition());
         }
-    }}
+    }
+    public interface OnExcersiceListener{
+        void onExcersiceClick(int position);
+    }
+}
 
