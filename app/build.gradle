@@ -35,6 +35,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+    implementation 'org.sufficientlysecure:html-textview:3.6'
 
 }
 apply plugin: 'com.google.gms.google-services'

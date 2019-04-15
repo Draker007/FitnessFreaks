@@ -47,6 +47,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Shoulders"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/shoulders">
@@ -72,6 +73,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Abs"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/abs">
@@ -96,6 +98,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Chest"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/chest">
@@ -119,6 +122,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Forearms"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/forearm">
@@ -143,6 +147,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Triceps"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/triceps">
@@ -165,6 +170,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Back"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/back">
@@ -189,6 +195,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Legs"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/legs">
@@ -213,6 +220,7 @@
                 android:layout_height="5dp" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/Calves"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:background="@drawable/calves">

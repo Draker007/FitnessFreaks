@@ -23,63 +23,88 @@ import java.util.Map;
 
 public class descriptionexcersice_fragment extends Fragment {
 View v;
-TextView type1,muscle,equipment;
 DatabaseReference databaseReference;
-String id , type;
-String type12;
+String type101,muscles,equip;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        v=inflater.inflate(R.layout.descriptionexcersice_fragment,container,false);
-            type1 = (TextView) container.findViewById(R.id.Type);
-            muscle = (TextView) container.findViewById(R.id.Muscle);
-            equipment = (TextView) container.findViewById(R.id.Equipment);
-//            type1.setText(type12);
        return v;
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        CheckEexcersiceActivity checkEexcersiceActivity = (CheckEexcersiceActivity) getActivity();
+    public void onStart() {
+        super.onStart();
+        View view = getView();
+        if (view != null) {
+            final TextView type = (TextView) view.findViewById(R.id.Type);
+           final TextView Muscle = (TextView) view.findViewById(R.id.Muscle);
+            final TextView equipment = (TextView) view.findViewById(R.id.Equipment);
+            // type.setText("hey no brown cow");
+            CheckEexcersiceActivity checkEexcersiceActivity = (CheckEexcersiceActivity) getActivity();
+            final String id1 = checkEexcersiceActivity.getid();
+            final String type1 = checkEexcersiceActivity.gettype();
+            Log.e("draker",type1);
+            databaseReference = FirebaseDatabase.getInstance().getReference();
+            final DatabaseReference excersise = databaseReference.child("exercises").child(type1).child(id1);
+            excersise.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                    for (DataSnapshot snap :dataSnapshot.getChildren()){
+                        Map<String,String> post = (Map<String, String>) dataSnapshot.getValue();
+                        Log.e("draker","hello");
+                        String id = post.get("id");
+//                        if (id1 == id){
+                            type101 = post.get("Type");
+                            muscles = post.get("Muscle");
+                            equip = post.get("Equipments");
+                            Log.e("Draker",type101);
+                        type.setText(type101);
+                        Muscle.setText(muscles);
+                        equipment.setText(equip);
+//                        }
+                    }
 
-       final String id = checkEexcersiceActivity.getid();
-        final String type = checkEexcersiceActivity.gettype();
-        Log.e("desc",type+id);
-
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference excersice  = databaseReference.child("exercises").child(type);
-        excersice.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for (DataSnapshot snap : dataSnapshot.getChildren()) {
-                    Map<String, String> postMap = (Map<String, String>) snap.getValue();
-
-                    String id1 = postMap.get("id");
-                    Log.e("inside10", id1);
-//                    if(id1 ==id) {
-                         type12 = postMap.get("Type");
-                        //type1.setText(t);
-
-                        break;
-
-//                    }
-
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
 
-            }
+            });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+        }
 
-            }
-        });
+//
+//        databaseReference = FirebaseDatabase.getInstance().getReference();
+//        DatabaseReference excersice  = databaseReference.child("exercises").child(type);
+//        excersice.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                for (DataSnapshot snap : dataSnapshot.getChildren()) {
+//                    Map<String, String> postMap = (Map<String, String>) snap.getValue();
+//
+//                    String id1 = postMap.get("id");
+//                    Log.e("inside10", id1);
+////
+//                         type12 = postMap.get("Type");
+//                         Log.e("setting","1");
+//                        // setType(type12);
+//
+//                        break;
+//
+////                    }
+//
+//
+//                }
+
+//            }
+//
+
 
     }
 
-    public void setType (String type){
-        type1.setText(type);
-}
+
+
 }
