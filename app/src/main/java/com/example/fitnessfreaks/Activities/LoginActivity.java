@@ -25,6 +25,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 private Button Login,Facebook;
@@ -33,10 +38,27 @@ SignInButton signInButton;
 private final static  int RC_SIGN_IN = 2;
 FirebaseAuth mAuth;
 GoogleSignInClient mGoogleSignInClient;
+FirebaseAuth.AuthStateListener mAuthListner;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    mAuth.addAuthStateListener(mAuthListner);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuthListner = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if (firebaseAuth.getCurrentUser()!= null){
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                }
+            }
+        };
 
 
         InitializeUI();
@@ -105,6 +127,14 @@ GoogleSignInClient mGoogleSignInClient;
             String personEmail = acct.getEmail();
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
+            String uid = mAuth.getCurrentUser().getUid();
+
+            DatabaseReference current_user = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+            Map newUser = new HashMap();
+            newUser.put("Name",personName);
+            newUser.put("email",personEmail);
+            newUser.put("id",personId);
+            current_user.setValue(newUser);
         }
 
 
@@ -133,7 +163,7 @@ GoogleSignInClient mGoogleSignInClient;
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,frontPageActivity.class));
+                //startActivity(new Intent(LoginActivity.this,frontPageActivity.class));
             }
         });
 
@@ -141,7 +171,7 @@ GoogleSignInClient mGoogleSignInClient;
             @Override
             public void onClick(View v) {
                 signIn();
-                startActivity(new Intent(LoginActivity.this,frontPageActivity.class));
+              //  startActivity(new Intent(LoginActivity.this,frontPageActivity.class));
             }
         });
     }
