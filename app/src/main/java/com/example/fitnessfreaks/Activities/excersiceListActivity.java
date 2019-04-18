@@ -1,6 +1,7 @@
 package com.example.fitnessfreaks.Activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
     RecyclerView recyclerView;
     private List<excersice> excersices = new ArrayList<>();
     excersiceAdapter adapter;
+    private Uri uri;
     private DatabaseReference mDatabase;
     public List<String> data = new ArrayList<>();
 
@@ -68,6 +70,8 @@ Log.d("database","starting");
                 String name = postMap.get("WorkoutName");
                 Log.d("database",name);
                 String id = postMap.get("id");
+                String image = postMap.get("WorkoutImage1");
+                
                 excersice excersice = new excersice(name,id);
                 excersices.add(excersice);
 recyclerView.setAdapter(adapter);
