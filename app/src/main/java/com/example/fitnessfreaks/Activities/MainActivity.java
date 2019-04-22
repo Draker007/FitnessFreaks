@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
-    private Button allExcersice ;
+    private Button allExcersice , myExcersice , nutrition ;
     FirebaseAuth.AuthStateListener mAuthListner;
 private Button signout;
 
@@ -30,6 +30,21 @@ private Button signout;
         setContentView(R.layout.activity_main);
         signout = (Button) findViewById(R.id.signOut);
         mAuth = FirebaseAuth.getInstance();
+        allExcersice = (Button)findViewById(R.id.allWorkout);
+        myExcersice = (Button)findViewById(R.id.myWorkout);
+        nutrition = (Button)findViewById(R.id.nutrition);
+        allExcersice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,frontPageActivity.class));
+            }
+        });
+        nutrition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,nutritionActivity.class));
+            }
+        });
         mAuthListner = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
