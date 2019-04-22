@@ -101,6 +101,7 @@ recyclerView.setAdapter(adapter);
         descriptionexcersice_fragment fragobj = new descriptionexcersice_fragment();
         fragobj.setArguments(bundle);
         intent.putExtra("type",data1);
+        intent.putExtra("name",model.getExcersiceName());
         startActivity(intent) ;
     }
 }

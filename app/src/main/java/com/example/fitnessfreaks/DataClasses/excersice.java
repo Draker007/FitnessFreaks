@@ -1,10 +1,14 @@
 package com.example.fitnessfreaks.DataClasses;
 
+import android.net.Uri;
+
 public class excersice {
-  //  String excersiceImage;
+    String excersiceImage;
     String excersiceName;
     String id;
-    public excersice(String excersiceName, String id) {
+
+    public excersice(String excersiceImage, String excersiceName, String id) {
+        this.excersiceImage = excersiceImage;
         this.excersiceName = excersiceName;
         this.id = id;
     }
@@ -17,18 +21,15 @@ public class excersice {
         this.id = id;
     }
 
-    public excersice(String excersiceName) {
-       // this.excersiceImage = excersiceImage;
-        this.excersiceName = excersiceName;
+
+
+    public String getExcersiceImage() {
+        return excersiceImage;
     }
 
-//    public String getExcersiceImage() {
-//        return excersiceImage;
-//    }
-
-//    public void setExcersiceImage(String excersiceImage) {
-//        this.excersiceImage = excersiceImage;
-//    }
+    public void setExcersiceImage(String excersiceImage) {
+        this.excersiceImage = excersiceImage;
+    }
 
     public String getExcersiceName() {
         return excersiceName;

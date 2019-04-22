@@ -52,11 +52,12 @@ public class CheckEexcersiceActivity extends AppCompatActivity {
     public void Initialize(){
          tabLayout = (TabLayout)findViewById(R.id.checkExcersiceTabLayout);
          viewPager=(ViewPager)findViewById(R.id.checkExcersiceViewer);
-         excersiceName=(TextView)findViewById(R.id.exerciseName);
+         excersiceName=(TextView)findViewById(R.id.excersiceName101);
          adapter = new checkExcersiceAdapter(getSupportFragmentManager());
        //  type = (TextView)findViewById(R.id.Type);
         //    type.setText("yoyoyo");
-
+        String name = getIntent().getStringExtra("name");
+        excersiceName.setText(name);
     }
 
     public void clickListeners(){

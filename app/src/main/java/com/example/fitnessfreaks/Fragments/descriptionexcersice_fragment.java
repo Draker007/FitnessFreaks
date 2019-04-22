@@ -1,6 +1,7 @@
 package com.example.fitnessfreaks.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.example.fitnessfreaks.Activities.CheckEexcersiceActivity;
 import com.example.fitnessfreaks.R;
@@ -41,6 +43,7 @@ String type101,muscles,equip;
             final TextView type = (TextView) view.findViewById(R.id.Type);
            final TextView Muscle = (TextView) view.findViewById(R.id.Muscle);
             final TextView equipment = (TextView) view.findViewById(R.id.Equipment);
+            final VideoView videoView = (VideoView) view.findViewById(R.id.videoView);
             // type.setText("hey no brown cow");
             CheckEexcersiceActivity checkEexcersiceActivity = (CheckEexcersiceActivity) getActivity();
             final String id1 = checkEexcersiceActivity.getid();
@@ -60,6 +63,11 @@ String type101,muscles,equip;
                             muscles = post.get("Muscle");
                             equip = post.get("Equipments");
                             Log.e("Draker",type101);
+                            String u= post.get("WorkoutVideo");
+                    Uri uri = Uri.parse(u);
+
+                        videoView.setVideoURI(uri);
+                        videoView.start();
                         type.setText(type101);
                         Muscle.setText(muscles);
                         equipment.setText(equip);

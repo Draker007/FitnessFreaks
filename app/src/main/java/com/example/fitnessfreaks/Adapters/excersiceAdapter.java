@@ -1,6 +1,11 @@
 package com.example.fitnessfreaks.Adapters;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.fitnessfreaks.DataClasses.excersice;
 import com.example.fitnessfreaks.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,7 +47,9 @@ public class excersiceAdapter extends RecyclerView.Adapter<excersiceAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         excersice excersice = excersices.get(i);
+        Picasso.get().load(excersice.getExcersiceImage()).into(myViewHolder.excersiceImage);
     myViewHolder.excersiceName.setText(excersice.getExcersiceName());
+    //myViewHolder.excersiceImage.setImageURI(excersice.getExcersiceImage());
 
     }
 
@@ -56,11 +64,14 @@ public class excersiceAdapter extends RecyclerView.Adapter<excersiceAdapter.MyVi
     OnExcersiceListener onExcersiceListener;
         public MyViewHolder(@NonNull View itemView,OnExcersiceListener onExcersiceListener) {
             super(itemView);
+
             excersiceImage = itemView.findViewById(R.id.exerciseImage);
             excersiceName = itemView.findViewById(R.id.exerciseName);
             this.onExcersiceListener = onExcersiceListener;
             itemView.setOnClickListener(this);
        }
+
+
 
         @Override
         public void onClick(View v) {

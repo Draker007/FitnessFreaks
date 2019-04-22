@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/excersiceGif"
-        android:layout_width="0dp"
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="wrap_content"
         android:layout_height="300dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,14 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Type                             :"
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/excersiceGif" />
+        app:layout_constraintTop_toBottomOf="@+id/videoView" />
 
     <TextView
         android:id="@+id/textView11"
