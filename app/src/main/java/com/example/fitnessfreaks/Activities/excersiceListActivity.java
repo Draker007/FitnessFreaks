@@ -71,8 +71,8 @@ Log.d("database","starting");
                 Log.d("database",name);
                 String id = postMap.get("id");
                 String image = postMap.get("WorkoutImage1");
-                
-                excersice excersice = new excersice(name,id);
+//                Uri uri = Uri.parse(image);
+                excersice excersice = new excersice(image,name,id);
                 excersices.add(excersice);
 recyclerView.setAdapter(adapter);
 
