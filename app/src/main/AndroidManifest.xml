@@ -11,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.nutritionActivity"></activity>
+        <activity android:name=".Activities.allDoneActivity"></activity>
+        <activity android:name=".Activities.excersicemain2Activity" />
+        <activity android:name=".Activities.ExcersiceMain" />
+        <activity android:name=".Activities.ShowPersonalExcersice" />
+        <activity android:name=".Activities.WorkoutTypeActivity" />
+        <activity android:name=".Activities.daysActivity" />
+        <activity android:name=".Activities.myWorkout" />
+        <activity android:name=".Activities.nutritionActivity" />
         <activity android:name=".Activities.ResetPasswordActivity" />
         <activity android:name=".Activities.MainActivity" />
         <activity
@@ -22,24 +29,22 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.frontPageActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-           </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.RegistrationActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.LauncherActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"> </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
