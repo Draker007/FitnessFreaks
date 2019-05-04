@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.allDoneActivity"></activity>
+        <activity android:name=".Activities.customExcersiceActivity"></activity>
+        <activity android:name=".Activities.allDoneActivity" />
         <activity android:name=".Activities.excersicemain2Activity" />
         <activity android:name=".Activities.ExcersiceMain" />
         <activity android:name=".Activities.ShowPersonalExcersice" />

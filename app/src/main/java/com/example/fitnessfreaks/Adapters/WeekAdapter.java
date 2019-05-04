@@ -29,7 +29,7 @@ private onWeekListner onWeekListner;
         View v;
         v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.weekview_recycler,viewGroup,false);
         MyViewHolder myviewHolder = new MyViewHolder(v,onWeekListner);
-        return null;
+        return myviewHolder;
     }
 
     @Override
@@ -37,7 +37,7 @@ private onWeekListner onWeekListner;
     weekNo weekNo = weekNos.get(i);
     String status = weekNo.getStatus();
     if (status == "True") {
-        myViewHolder.checkImage.setImageResource(R.drawable.doneTick);
+        myViewHolder.checkImage.setImageResource(R.drawable.donetick);
     }
     else {
         myViewHolder.checkImage.setImageResource(R.drawable.go);

@@ -42,7 +42,7 @@
                 android:id="@+id/mainWorkout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@drawable/mainWorkout">
+                android:background="@drawable/mainworkout">
 
                 <TextView
                     android:id="@+id/textView16"
@@ -69,7 +69,7 @@
                 android:id="@+id/postWorkout"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@drawable/postWorkout">
+                android:background="@drawable/postworkout">
 
             </android.support.constraint.ConstraintLayout>
 
