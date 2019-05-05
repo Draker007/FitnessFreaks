@@ -16,21 +16,21 @@
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter></activity>
-        <activity android:name=".Activities.customExcersiceActivity" />
-        <activity android:name=".Activities.allDoneActivity" />
-        <activity android:name=".Activities.excersicemain2Activity" />
-        <activity android:name=".Activities.ExcersiceMain" />
-        <activity android:name=".Activities.ShowPersonalExcersice" />
-        <activity android:name=".Activities.WorkoutTypeActivity" />
-        <activity android:name=".Activities.daysActivity" />
-        <activity android:name=".Activities.myWorkout" />
-        <activity android:name=".Activities.nutritionActivity" />
-        <activity android:name=".Activities.ResetPasswordActivity" />
-        <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.excersiseList" />
-        <activity android:name=".Activities.ExcersiceSetList">
+        <activity android:name=".Activities.customExcersiceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.allDoneActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.excersicemain2Activity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.ExcersiceMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.ShowPersonalExcersice" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.WorkoutTypeActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.daysActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.myWorkout" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.nutritionActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.ResetPasswordActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.MainActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Activities.excersiseList" android:theme="@style/AppTheme.NoActionBar"/>
 
-        </activity>
         <activity
             android:name=".Activities.CheckEexcersiceActivity"
             android:theme="@style/AppTheme.NoActionBar" />
