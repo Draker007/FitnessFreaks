@@ -2,11 +2,10 @@ package com.example.fitnessfreaks.DataClasses;
 
 public class excersicesCustom {
     private String name;
-    private String image;
 
-    public excersicesCustom(String name, String image) {
+
+    public excersicesCustom(String name) {
         this.name = name;
-        this.image = image;
     }
 
     public String getName() {
@@ -17,11 +16,5 @@ public class excersicesCustom {
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 }

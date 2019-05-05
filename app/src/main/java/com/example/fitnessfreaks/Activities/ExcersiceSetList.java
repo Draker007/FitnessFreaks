@@ -15,24 +15,24 @@ public class ExcersiceSetList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.excersices_setlist);
-        men = (ImageView) findViewById(R.id.menWorkout);
-        women = (ImageView) findViewById(R.id.womenWorkout);
-
-        men.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ExcersiceSetList.this ,customExcersiceActivity.class);
-                 intent.putExtra("sex","Men");
-                 startActivity(intent);
-            }
-        });
-        women.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ExcersiceSetList.this,customExcersiceActivity.class);
-                intent.putExtra("sex","Women");
-            startActivity(intent);
-            }
-        });
+//        men = (ImageView) findViewById(R.id.menWorkout);
+//        women = (ImageView) findViewById(R.id.womenWorkout);
+//
+//        men.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ExcersiceSetList.this ,customExcersiceActivity.class);
+//                 intent.putExtra("sex","Men");
+//                 startActivity(intent);
+//            }
+//        });
+//        women.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(ExcersiceSetList.this,customExcersiceActivity.class);
+//                intent.putExtra("sex","Women");
+//            startActivity(intent);
+//            }
+//        });
     }
 }
