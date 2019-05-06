@@ -1,5 +1,6 @@
 package com.example.fitnessfreaks.Activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -65,6 +66,11 @@ public class customExcersiceActivity extends AppCompatActivity implements custom
 
     @Override
     public void OnCustomExcersiceClick(int position) {
-
+        final excersicesCustom model = excersicesCustomList.get(position);
+        Intent intent = new Intent(this,ExcersiceSetDescActivity.class);
+        intent.putExtra("name",model.getName());
+        String sex = getIntent().getStringExtra("sex");
+        intent.putExtra("sex",sex);
+        startActivity(intent);
     }
 }

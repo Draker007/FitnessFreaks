@@ -11,26 +11,56 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.excersiceSetActivity"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activities.dayExcersiceSet"></activity>
+        <activity android:name=".Activities.dayoffActivity" />
+        <activity
+            android:name=".Activities.ExcersiceSetDescActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.excersiceSetActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
-        <activity android:name=".Activities.customExcersiceActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.allDoneActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.excersicemain2Activity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.ExcersiceMain" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.ShowPersonalExcersice" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.WorkoutTypeActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.daysActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.myWorkout" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.nutritionActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.ResetPasswordActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.MainActivity" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Activities.excersiseList" android:theme="@style/AppTheme.NoActionBar"/>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.customExcersiceActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.allDoneActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.excersicemain2Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ExcersiceMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ShowPersonalExcersice"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.WorkoutTypeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.daysActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.myWorkout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.nutritionActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.ResetPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.excersiseList"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.CheckEexcersiceActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -45,7 +75,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.LauncherActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -52,7 +52,6 @@
                     android:text="Sunday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -92,7 +91,6 @@
                     android:text="Monday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Mondayiv"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -130,7 +128,6 @@
                     android:text="Tuesday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Tuesdayim"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -140,6 +137,40 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/Wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/weda"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/wednesday" />
+
+                <TextView
+                    android:id="@+id/wedn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Wednesday"
+                    android:textColor="#FD0A0A0A"
+                    android:textSize="36sp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/weda"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/Thursday"
@@ -168,7 +199,6 @@
                     android:text="Thursday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Thu"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -206,7 +236,6 @@
                     android:text="Friday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Fri"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -244,7 +273,6 @@
                     android:text="Saturday"
                     android:textColor="#FD0A0A0A"
                     android:textSize="36sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Sat"
                     app:layout_constraintTop_toTopOf="parent" />
