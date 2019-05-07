@@ -50,7 +50,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Monday");
+                            startActivity(intent);
                         }
                     }
 
@@ -76,7 +80,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Monday");
+                            startActivity(intent);
                         }
                     }
 
@@ -102,7 +110,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Tuesday");
+                            startActivity(intent);
                         }
                     }
 
@@ -128,7 +140,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Wednesday");
+                            startActivity(intent);
                         }
                     }
 
@@ -154,7 +170,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Thursday");
+                            startActivity(intent);
                         }
                     }
 
@@ -180,7 +200,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Friday");
+                            startActivity(intent);
                         }
                     }
 
@@ -206,7 +230,11 @@ public class daysActivity extends AppCompatActivity {
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
-                            startActivity(new Intent(daysActivity.this, dayExcersiceSet.class));
+                            Intent intent = new Intent(daysActivity.this, dayExcersiceSet.class);
+                            intent.putExtra("sex",sex);
+                            intent.putExtra("name",name);
+                            intent.putExtra("day","Saturday");
+                            startActivity(intent);
                         }
                     }
 

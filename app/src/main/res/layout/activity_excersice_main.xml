@@ -24,22 +24,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <FrameLayout
-                    android:id="@+id/frameLayout"
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/ExImage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </android.support.constraint.ConstraintLayout>
 
-                    <VideoView
-                        android:id="@+id/ExVideo"
-                        android:layout_width="match_parent"
-                        android:layout_height="250dp"
-                        android:layout_margin="5dp"
-                       />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                </FrameLayout>
 
                 <TextView
                     android:id="@+id/ExName"
@@ -143,7 +144,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
                 <TextView
-                    android:id="@+id/Sets"
+                    android:id="@+id/ExSets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -156,7 +157,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/Reps"
+                    android:id="@+id/ExReps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -169,7 +170,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/textView31"
-                    app:layout_constraintTop_toBottomOf="@+id/Sets"
+                    app:layout_constraintTop_toBottomOf="@+id/ExSets"
                     app:layout_constraintVertical_bias="1.0" />
             </android.support.constraint.ConstraintLayout>
 
@@ -221,7 +222,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/ExInst" />
 
                 <TextView
-                    android:id="@+id/caution"
+                    android:id="@+id/Excaution"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
