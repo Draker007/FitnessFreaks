@@ -11,19 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.dayExcersiceSet"></activity>
-        <activity android:name=".Activities.dayoffActivity" />
+
+        <activity android:name=".Activities.dayExcersiceSet"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activities.dayoffActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Activities.ExcersiceSetDescActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.excersiceSetActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Activities.customExcersiceActivity"
@@ -75,7 +74,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.LauncherActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter></activity>
         <activity
             android:name=".Activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />

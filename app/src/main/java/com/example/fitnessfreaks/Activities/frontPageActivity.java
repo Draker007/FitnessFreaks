@@ -23,7 +23,7 @@ public class frontPageActivity extends AppCompatActivity {
 
     private void initialize(){
         Biceps = (ConstraintLayout)findViewById(R.id.biceps_layout);
-        shoulders = (ConstraintLayout)findViewById(R.id.Shoulders);
+        shoulders = (ConstraintLayout)findViewById(R.id.shoulder);
         legs = (ConstraintLayout)findViewById(R.id.Legs);
         triceps = (ConstraintLayout)findViewById(R.id.Triceps);
         forearms= (ConstraintLayout)findViewById(R.id.Forearms);

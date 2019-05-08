@@ -86,6 +86,9 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
         intent.putExtra("sex",sex);
         intent.putExtra("name",name);
         intent.putExtra("id",id);
+        String day = getIntent().getStringExtra("day");
+        Log.e("draker", "onClick: "+day);
+        intent.putExtra("day",day);
         Log.e(TAG, "onDESClick: "+sex+id+name);
         startActivity(intent);
     }

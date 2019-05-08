@@ -65,6 +65,7 @@ public class ExcersiceSetDescActivity extends AppCompatActivity {
             Intent intent = new Intent(ExcersiceSetDescActivity.this,daysActivity.class);
              intent.putExtra("name", name12);
             intent.putExtra("sex",sex);
+
             startActivity(intent);
         }
     });
