@@ -36,7 +36,7 @@ private List<NutritionList> nutritionLists;
         myviewHolder.Carbs.setText(nut.getCarbs());
         myviewHolder.protien.setText(nut.getProtien());
         myviewHolder.Fat.setText(nut.getFat());
-        myviewHolder.qty.setText(nut.getQnt());
+
     }
 
     @Override
@@ -53,7 +53,6 @@ private List<NutritionList> nutritionLists;
             NutName = (TextView)itemView.findViewById(R.id.nutName);
             protien = (TextView)itemView.findViewById(R.id.nutProtien);
             Fat = (TextView) itemView.findViewById(R.id.nutFat);
-            qty = (TextView) itemView.findViewById(R.id.nutQty);
             Carbs = (TextView) itemView.findViewById(R.id.nutCarbs);
 
         }

@@ -3,23 +3,14 @@ package com.example.fitnessfreaks.DataClasses;
 public class NutritionList {
     public String name , protien , qnt , fat , carbs ;
 
-    public NutritionList(String name,String qnt, String protien, String fat, String carbs) {
+    public NutritionList(String name, String protien, String fat, String carbs) {
         this.name = name;
-        this.qnt = qnt;
         this.protien = protien;
         this.fat = fat;
         this.carbs = carbs;
     }
 
-    public String getQnt() {
-        return qnt;
-    }
-
-    public void setQnt(String qnt) {
-        this.qnt = qnt;
-    }
-
-    public String getName() {
+       public String getName() {
         return name;
     }
 

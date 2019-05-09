@@ -31,9 +31,6 @@
             android:name=".Activities.allDoneActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.excersicemain2Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Activities.ExcersiceMain"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
