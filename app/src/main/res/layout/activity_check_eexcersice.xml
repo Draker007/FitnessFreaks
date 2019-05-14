@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.CheckEexcersiceActivity">
+    tools:context=".Activities.CheckEexcersiceActivity"
+    android:background="@drawable/backgroiund">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/checkExcersiceTabLayout"
@@ -13,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/excersiceName101">
+        app:layout_constraintTop_toBottomOf="@+id/excersiceName101"
+        app:tabTextColor="#1EB60C">
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        android:textColor="#000000"
+        android:textColor="#FEFFFE"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
