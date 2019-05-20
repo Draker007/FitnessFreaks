@@ -29,7 +29,8 @@
                 android:id="@+id/biceps_layout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/arms">
+                android:background="@drawable/bg"
+                >
 
                 <TextView
                     android:id="@+id/textView"
@@ -41,11 +42,20 @@
                     android:text="BICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:fontFamily="serif"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/biceps" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -56,22 +66,31 @@
                 android:id="@+id/shoulder"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/shoulders">
+                android:background="@drawable/bg"
+                >
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="168dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="240dp"
                     android:fontFamily="serif"
                     android:text="SHOULDERS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:fontFamily="serif"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/soulders" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -82,22 +101,32 @@
                 android:id="@+id/Abs"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/abs">
+                android:background="@drawable/bg"
+                >
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="36dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="serif"
                     android:text="ABS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
+                    android:textSize="24sp"
                     app:fontFamily="serif"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/abs1" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -108,21 +137,30 @@
                 android:id="@+id/Chest"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/chest">
+                android:background="@drawable/bg" >
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="serif"
                     android:text="CHEST"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/chest1" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -133,7 +171,7 @@
                 android:id="@+id/Forearms"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/forearm">
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -145,10 +183,18 @@
                     android:text="FOREARMS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/forearms" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -159,7 +205,7 @@
                 android:id="@+id/Triceps"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/triceps">
+                android:background="@drawable/bg" >
 
                 <TextView
                     android:id="@+id/textView6"
@@ -170,10 +216,18 @@
                     android:text="TRICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/triceps" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -184,7 +238,7 @@
                 android:id="@+id/Back"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/back">
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -196,10 +250,18 @@
                     android:text="BACK"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -210,7 +272,7 @@
                 android:id="@+id/Legs"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/legs">
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView8"
@@ -222,10 +284,18 @@
                     android:text="LEGS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/legs" />
             </android.support.constraint.ConstraintLayout>
 
             <Space
@@ -236,7 +306,7 @@
                 android:id="@+id/Calves"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/calves">
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView9"
@@ -248,10 +318,18 @@
                     android:text="CALVES"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#4CAF50"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
+                    android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/calves" />
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

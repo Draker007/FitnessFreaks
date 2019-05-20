@@ -2,6 +2,7 @@ package com.example.fitnessfreaks.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
@@ -10,12 +11,17 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.fitnessfreaks.R;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
-    private Button allExcersice , myExcersice , nutrition ;
+    private ConstraintLayout allExcersice , myExcersice , nutrition ;
     FirebaseAuth.AuthStateListener mAuthListner;
+    GoogleSignInClient mGoogle;
 private Button signout;
 
     @Override
@@ -30,9 +36,14 @@ private Button signout;
         setContentView(R.layout.activity_main);
         signout = (Button) findViewById(R.id.signOut);
         mAuth = FirebaseAuth.getInstance();
-        allExcersice = (Button)findViewById(R.id.allWorkout);
-        myExcersice = (Button)findViewById(R.id.myWorkout);
-        nutrition = (Button)findViewById(R.id.nutrition);
+        allExcersice = (ConstraintLayout) findViewById(R.id.AllWorkout);
+        myExcersice = (ConstraintLayout) findViewById(R.id.CustomWokout);
+        nutrition = (ConstraintLayout) findViewById(R.id.Nutrition);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("802997826990-8b4ihdbg5nqjhq0uofueicjbgmvn2j2f.apps.googleusercontent.com")
+                .requestEmail()
+                .build();
+        mGoogle = GoogleSignIn.getClient(this, gso);
         allExcersice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +67,7 @@ private Button signout;
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
-
+                mGoogle.revokeAccess();
             }
         });
         myExcersice.setOnClickListener(new View.OnClickListener() {
