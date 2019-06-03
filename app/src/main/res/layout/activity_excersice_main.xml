@@ -4,339 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroiund"
     tools:context=".Activities.ExcersiceMain">
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/emName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+
+        android:textColor="#0E0D0D"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/emTab"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emName"
+        app:tabTextColor="#CB181717">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Monday" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp">
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tuesday" />
 
-                <WebView
-                    android:id="@+id/ExImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wednesday" />
+    </android.support.design.widget.TabLayout>
 
-                    app:layout_constraintTop_toTopOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/emView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/emGonxtbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        app:layout_constraintTop_toBottomOf="@+id/emTab" />
 
+    <Button
+        android:id="@+id/emGonxtbtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/roundbutton"
+        android:text="Go Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/emBackBtn" />
 
-                <TextView
-                    android:id="@+id/ExName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:text="TextView"
-                    android:textColor="#EDF1EE"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Main Muscles    ="
-                    android:textColor="#F3FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ExName" />
-
-                <TextView
-                    android:id="@+id/ExMuscle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView22"
-                    app:layout_constraintTop_toBottomOf="@+id/ExName" />
-
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Equipments        ="
-                    android:textColor="#F3FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-                <TextView
-                    android:id="@+id/ExEquip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView28"
-                    app:layout_constraintTop_toBottomOf="@+id/ExMuscle" />
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Other Muscle     ="
-                    android:textColor="#F3FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-                <TextView
-                    android:id="@+id/EMOther_Muscle1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView36"
-                    app:layout_constraintTop_toBottomOf="@+id/ExEquip" />
-
-                <TextView
-                    android:id="@+id/textView38"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Type                     ="
-                    android:textColor="#F3FFFFFF"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView36" />
-
-                <TextView
-                    android:id="@+id/EMType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView38"
-                    app:layout_constraintTop_toBottomOf="@+id/EMOther_Muscle1" />
-            </android.support.constraint.ConstraintLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Sets   :"
-                    android:textColor="#FCFFFDFD"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView31"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Repetitions  :"
-                    android:textColor="#FCFFFDFD"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView30" />
-
-                <TextView
-                    android:id="@+id/ExSets"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView30"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/ExReps"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textView31"
-                    app:layout_constraintTop_toBottomOf="@+id/ExSets" />
-
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/textView34"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Instruction"
-                    android:textColor="#FCFFFDFD"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/ExInst"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="Textview"
-                    android:textColor="#4CAF50"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView34"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Caution / Variation"
-                    android:textColor="#FCFFFDFD"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ExInst" />
-
-                <TextView
-                    android:id="@+id/Excaution"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="TextView"
-                    android:textColor="#4CAF50"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
-            </android.support.constraint.ConstraintLayout>
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/btnGo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/roundbutton"
-                    android:text="Done Go Next"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/btnGoBack"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/roundbutton"
-                    android:text="Go back to Routine"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnGo" />
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    <Button
+        android:id="@+id/emBackBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/roundbutton"
+        android:text="Back To Excersice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/emGonxtbtn"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -73,7 +73,7 @@ public class frontPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(),excersiceListActivity.class);
-                intent.putExtra("type","Forearms");
+                intent.putExtra("type","Forearm");
                 startActivity(intent);
             }
         });
@@ -97,6 +97,14 @@ public class frontPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(),excersiceListActivity.class);
                 intent.putExtra("type","Chest");
+                startActivity(intent);
+            }
+        });
+        calves.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(),excersiceListActivity.class);
+                intent.putExtra("type","calves");
                 startActivity(intent);
             }
         });

@@ -4,6 +4,8 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -14,6 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fitnessfreaks.Adapters.checkExcersiceAdapter;
+import com.example.fitnessfreaks.Fragments.Em1stFragment;
+import com.example.fitnessfreaks.Fragments.Em2ndFragment;
 import com.example.fitnessfreaks.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,66 +32,65 @@ import java.util.Map;
 import pl.droidsonroids.gif.GifImageView;
 
 public class ExcersiceMain extends AppCompatActivity {
-    String status;
-    TextView EMmuscle,EMequip,EMsets,EMrep,Exname,EMType,EMInst,EMCaution;
-    WebView EmImage;
-    Button gonxt,goback;
-    DatabaseReference mdatabase;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private checkExcersiceAdapter adapter;
+    TextView excersiceName,type;
+    DatabaseReference databaseReference;
     String TAG = "draker";
+    String id,sex,name,day,status;
+    Button btngonxt , btnBack;
+    DatabaseReference mDatabase;
+
+    public String getid(){
+         id = getIntent().getStringExtra("id");
+        return id;
+    }
+    public String getSex(){
+         sex = getIntent().getStringExtra("sex");
+        return sex;
+    }
+    public String getname(){
+         name = getIntent().getStringExtra("name");
+        return name;
+    }
+    public String getday(){
+         day = getIntent().getStringExtra("day");
+        return day;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_excersice_main);
-        EMmuscle=(TextView)findViewById(R.id.ExMuscle);
-        EMequip=(TextView)findViewById(R.id.ExEquip);
-        EMsets=(TextView)findViewById(R.id.ExSets);
-        EMrep=(TextView)findViewById(R.id.ExReps);
-        EmImage=(WebView) findViewById(R.id.ExImage);
-        Exname=(TextView)findViewById(R.id.ExName);
-        EMType=(TextView)findViewById(R.id.EMType);
-        EMInst=(TextView)findViewById(R.id.ExInst);
-        EMCaution=(TextView)findViewById(R.id.Excaution);
-        gonxt=(Button)findViewById(R.id.btnGo);
-        goback = (Button)findViewById(R.id.btnGoBack);
-        mdatabase = FirebaseDatabase.getInstance().getReference();
-        setdata();
-        setlistner();
-    }
-    private void setdata(){
-        final String sex = getIntent().getStringExtra("sex");
-        final String name = getIntent().getStringExtra("name");
-        final String id = getIntent().getStringExtra("id");
-        final String day = getIntent().getStringExtra("day");
-        Log.e(TAG, "setdata:"+ id +day+sex+name);
-        DatabaseReference db = mdatabase.child("ExcersiceSets").child(sex).child(name).child(day).child(id);
+        day = getIntent().getStringExtra("day");
+        name = getIntent().getStringExtra("name");
+        sex = getIntent().getStringExtra("sex");
+        id = getIntent().getStringExtra("id");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference db = mDatabase.child("ExcersiceSets").child(sex).child(name).child(day).child(id);
+
+        Log.e(TAG, "onCreate: "+id );
+        tabLayout = (TabLayout)findViewById(R.id.emTab);
+        viewPager=(ViewPager)findViewById(R.id.emView);
+        excersiceName=(TextView)findViewById(R.id.emName);
+        adapter = new checkExcersiceAdapter(getSupportFragmentManager());
+        //  type = (TextView)findViewById(R.id.Type);
+        //    type.setText("yoyoyo");
+
+        adapter.AddFragment(new Em1stFragment(),"Description");
+        adapter.AddFragment(new Em2ndFragment(),"Instructions");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+        btngonxt = findViewById(R.id.emGonxtbtn);
+        btnBack = findViewById(R.id.emBackBtn);
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Map<String,String> map = (Map<String, String>)dataSnapshot.getValue();
-                String getname = map.get("name");
-                String getmuscle = map.get("Main Muscle Worked");
-                String getvideo = map.get("video");
-                String getEquip = map.get("Equipment");
-                String getInst = map.get("Instruction");
-                String getCaution = map.get("Caution");
-                String getSet = map.get("sets");
-                String getRep = map.get("reps");
-                String getType = map.get("Type");
-                status = map.get("status");
-                EMmuscle.setText(getmuscle);
-                EMequip.setText(getEquip);
-                EMsets.setText(getSet);
-                EMrep.setText(getRep);
-                EMInst.setText(getInst);
-                EMCaution.setText(getCaution);
-                Exname.setText(getname);
-                EmImage.loadUrl(getvideo);
-                Exname.setText(getname);
-                EMType.setText(getType);
-
-
-
-
+                Map<String , String > postMap = (Map<String, String>)dataSnapshot.getValue();
+                status = postMap.get("status");
+                String name = postMap.get("name");
+                excersiceName.setText(name);
             }
 
             @Override
@@ -94,46 +98,37 @@ public class ExcersiceMain extends AppCompatActivity {
 
             }
         });
+        btngonxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = "true";
+                if (status.equals(str)){
+                Intent intent = new Intent(ExcersiceMain.this,ExcersiceMain.class);
+                intent.putExtra("sex",sex);
+                Integer id1 = Integer.valueOf(id);
+                id1++;
+                intent.putExtra("id",id1.toString());
+                intent.putExtra("name",name);
+                intent.putExtra("day",day);
+                    Log.e(TAG, "onClick: "+sex+id1+name+day );
+                startActivity(intent);
+ }else{
+                    startActivity(new Intent(ExcersiceMain.this,allDoneActivity.class));
+                }
+
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ExcersiceMain.this,dayExcersiceSet.class);
+                intent.putExtra("sex",sex);
+                intent.putExtra("name",name);
+                intent.putExtra("day",day);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    private void setlistner(){
-  gonxt.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-          String str1 ="true";
-          if (str1.equals(status)) {
-              Intent intent = new Intent(ExcersiceMain.this, ExcersiceMain.class);
-              String id = getIntent().getStringExtra("id");
-              Integer id1 = Integer.valueOf(id);
-              id1++;
-              String sex = getIntent().getStringExtra("sex");
-              String name = getIntent().getStringExtra("name");
-              String day = getIntent().getStringExtra("day");
-              intent.putExtra("id", id1.toString());
-              intent.putExtra("sex", sex);
-              intent.putExtra("name", name);
-              intent.putExtra("day", day);
-              startActivity(intent);
-          }
-          else{
-              startActivity(new Intent(ExcersiceMain.this,allDoneActivity.class));
-          }
-
-
-      }
-  });
-  goback.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-          String sex = getIntent().getStringExtra("sex");
-          String name = getIntent().getStringExtra("name");
-          String day = getIntent().getStringExtra("day");
-          Intent intent = new Intent(ExcersiceMain.this,dayExcersiceSet.class);
-          intent.putExtra("sex", sex);
-          intent.putExtra("name", name);
-          intent.putExtra("day", day);
-          startActivity(intent);
-      }
-  });
-    }
 }

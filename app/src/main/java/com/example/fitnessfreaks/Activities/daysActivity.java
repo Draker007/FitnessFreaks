@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.fitnessfreaks.R;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,10 +22,13 @@ public class daysActivity extends AppCompatActivity {
     ConstraintLayout sun,mon,tue,wed,thurs,fri,sat;
     DatabaseReference mDatabase;
     String TAG = "Draker";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_days);
+
         sun=(ConstraintLayout)findViewById(R.id.Sunday);
         mon=(ConstraintLayout)findViewById(R.id.Monday);
         tue=(ConstraintLayout)findViewById(R.id.Tuesday);

@@ -71,6 +71,7 @@ public class customExcersiceActivity extends AppCompatActivity implements custom
         intent.putExtra("name",model.getName());
         String sex = getIntent().getStringExtra("sex");
         intent.putExtra("sex",sex);
+
         startActivity(intent);
     }
 }

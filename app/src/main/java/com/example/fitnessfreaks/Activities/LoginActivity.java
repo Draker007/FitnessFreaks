@@ -175,7 +175,7 @@ mAuth = FirebaseAuth.getInstance();
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-
+                Log.e("Draker", "onActivityResult: "+e );
                 Toast.makeText(this, "Failed sigin in ", Toast.LENGTH_SHORT).show();
                 // ...
             }

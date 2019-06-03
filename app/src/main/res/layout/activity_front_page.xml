@@ -41,7 +41,7 @@
                     android:fontFamily="serif"
                     android:text="BICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:fontFamily="serif"
                     app:layout_constraintStart_toStartOf="parent"
@@ -73,15 +73,15 @@
                     android:id="@+id/textView2"
                     android:layout_width="168dp"
                     android:layout_height="51dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="48dp"
-                    android:layout_marginEnd="240dp"
                     android:fontFamily="serif"
                     android:text="SHOULDERS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:fontFamily="serif"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
@@ -113,7 +113,7 @@
                     android:fontFamily="serif"
                     android:text="ABS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:fontFamily="serif"
                     app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +148,7 @@
                     android:fontFamily="serif"
                     android:text="CHEST"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -182,7 +182,7 @@
                     android:fontFamily="serif"
                     android:text="FOREARMS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -215,7 +215,7 @@
                     android:fontFamily="serif"
                     android:text="TRICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -249,14 +249,14 @@
                     android:fontFamily="serif"
                     android:text="BACK"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView13"
-                    android:layout_width="150dp"
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -283,7 +283,7 @@
                     android:fontFamily="serif"
                     android:text="LEGS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -317,7 +317,7 @@
                     android:fontFamily="serif"
                     android:text="CALVES"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#4CAF50"
+                    android:textColor="#ffffff"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
