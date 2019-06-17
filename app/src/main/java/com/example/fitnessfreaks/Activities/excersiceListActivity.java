@@ -9,6 +9,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.fitnessfreaks.Adapters.excersiceAdapter;
 import com.example.fitnessfreaks.DataClasses.excersice;
@@ -29,7 +31,7 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
     RecyclerView recyclerView;
     private List<excersice> excersices = new ArrayList<>();
     excersiceAdapter adapter;
-    private Uri uri;
+    ProgressBar progressBar;
     private DatabaseReference mDatabase;
     public List<String> data = new ArrayList<>();
 
@@ -41,7 +43,7 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
         setContentView(R.layout.activity_excersice_list);
 
         recyclerView = (RecyclerView)findViewById(R.id.excersiceRecycler);
-
+        progressBar = (ProgressBar)findViewById(R.id.ELProgress);
         final String data1 = getIntent().getStringExtra("type");
 
 
@@ -75,6 +77,7 @@ Log.d("database","starting");
                 excersice excersice = new excersice(image,name,id);
                 excersices.add(excersice);
 recyclerView.setAdapter(adapter);
+progressBar.setVisibility(View.INVISIBLE);
 
             };
         }

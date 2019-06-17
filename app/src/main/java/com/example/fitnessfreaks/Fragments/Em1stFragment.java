@@ -1,5 +1,6 @@
 package com.example.fitnessfreaks.Fragments;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,7 +28,6 @@ import java.util.Map;
 public class Em1stFragment extends Fragment {
     View v;
     ImageView imageView;
-    Button btnNxt;
     TextView type,rep,set,main,other,equip;
     DatabaseReference mDatabase;
 
@@ -61,6 +61,7 @@ public class Em1stFragment extends Fragment {
         final String name =  excersiceMain.getname();
         final String id =  excersiceMain.getid();
         final String day = excersiceMain.getday();
+
 
         DatabaseReference databaseReference = mDatabase.child("ExcersiceSets").child(sex).child(name).child(day).child(id);
         databaseReference.addValueEventListener(new ValueEventListener() {

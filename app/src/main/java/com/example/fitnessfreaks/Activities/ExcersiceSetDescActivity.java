@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fitnessfreaks.R;
@@ -15,12 +16,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.Map;
 
 public class ExcersiceSetDescActivity extends AppCompatActivity {
     TextView name,weeks,desc;
     Button go;
+    ImageView images;
     DatabaseReference mdatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class ExcersiceSetDescActivity extends AppCompatActivity {
         weeks=(TextView)findViewById(R.id.ESDweeks);
         desc=(TextView)findViewById(R.id.ESDdesc);
         go = (Button)findViewById(R.id.ESDstart);
+        images = (ImageView)findViewById(R.id.ESDimage);
         mdatabase = FirebaseDatabase.getInstance().getReference();
         prepareData();
     }
@@ -50,6 +54,8 @@ public class ExcersiceSetDescActivity extends AppCompatActivity {
                  weeks.setText(week);
                  String descr = postMap.get("desc");
                  desc.setText(descr);
+                 String image = postMap.get("image");
+            Picasso.get().load(image).into(images);
 
 
         }

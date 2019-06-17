@@ -6,10 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.fitnessfreaks.DataClasses.excersicesCustom;
 import com.example.fitnessfreaks.R;
+import com.squareup.picasso.Picasso;
 
 import java.lang.invoke.ConstantCallSite;
 import java.util.List;
@@ -36,6 +38,7 @@ private onCustomExcersiceListner onCustomExcersiceListner;
     public void onBindViewHolder(@NonNull MyviewHolder myviewHolder, int i) {
 excersicesCustom excersicesCustom = excersicesCustomList.get(i);
 myviewHolder.name.setText(excersicesCustom.getName() );
+        Picasso.get().load(excersicesCustom.getImage()).into(myviewHolder.setImage);
     }
 
     @Override
@@ -46,11 +49,12 @@ myviewHolder.name.setText(excersicesCustom.getName() );
     public class MyviewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ConstraintLayout layout;
         TextView name;
+        ImageView setImage;
         onCustomExcersiceListner onCustomExcersiceListner;
 
         public MyviewHolder(@NonNull View itemView, onCustomExcersiceListner onCustomExcersiceListner) {
             super(itemView);
-            layout = (ConstraintLayout) itemView.findViewById(R.id.customExcerImage);
+            setImage = (ImageView) itemView.findViewById(R.id.CERImage);
             name = (TextView) itemView.findViewById(R.id.WorkoutSetName);
             this.onCustomExcersiceListner = onCustomExcersiceListner;
             itemView.setOnClickListener(this);

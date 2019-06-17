@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.fitnessfreaks.Adapters.customExcersiceAdapter;
 import com.example.fitnessfreaks.DataClasses.excersicesCustom;
@@ -27,12 +29,13 @@ public class customExcersiceActivity extends AppCompatActivity implements custom
     private List<excersicesCustom> excersicesCustomList = new ArrayList<>();
     customExcersiceAdapter adapter;
     private DatabaseReference mDatabase;
-
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_excersice);
+        progressBar=findViewById(R.id.CEProgress);
         recyclerView = (RecyclerView)findViewById(R.id.customExcersiceRecycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -51,9 +54,11 @@ public class customExcersiceActivity extends AppCompatActivity implements custom
             for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                 Map<String,String> postMap = (Map<String, String>)snapshot.getValue();
                 String name = postMap.get("name");
-                excersicesCustom excersicesCustom = new excersicesCustom(name);
+                String image = postMap.get("image");
+                excersicesCustom excersicesCustom = new excersicesCustom(name,image);
                 excersicesCustomList.add(excersicesCustom);
                 recyclerView.setAdapter(adapter);
+                progressBar.setVisibility(View.INVISIBLE);
             }
         }
 

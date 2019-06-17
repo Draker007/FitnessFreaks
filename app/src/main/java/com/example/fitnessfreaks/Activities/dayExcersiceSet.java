@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.fitnessfreaks.Adapters.DESadapter;
 import com.example.fitnessfreaks.DataClasses.excersice;
@@ -27,12 +29,14 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
     private List<excersice> excersices = new ArrayList<>();
     DESadapter adapter ;
     private DatabaseReference mdatabase;
+    ProgressBar progressBar;
     private  List<String> data = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_excersice_set);
         recyclerView = (RecyclerView)findViewById(R.id.DESrecycler);
+        progressBar = findViewById(R.id.DESProgress);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new DESadapter(excersices,this);
@@ -63,6 +67,7 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
                         excersice excersice = new excersice(image, name1, id);
                         excersices.add(excersice);
                         recyclerView.setAdapter(adapter);
+
 
                     }
                 }

@@ -6,9 +6,13 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ButtonBarLayout;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.fitnessfreaks.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -29,11 +33,12 @@ private Button signout;
         super.onStart();
         mAuth.addAuthStateListener(mAuthListner);
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         signout = (Button) findViewById(R.id.signOut);
         mAuth = FirebaseAuth.getInstance();
         allExcersice = (ConstraintLayout) findViewById(R.id.AllWorkout);
@@ -78,4 +83,6 @@ private Button signout;
         });
 
     }
+
+
 }

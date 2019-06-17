@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <VideoView
+    <ImageView
         android:id="@+id/videoView"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
@@ -58,10 +58,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textColor="#4CAF50"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView10" />
 
     <TextView
@@ -69,10 +71,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textColor="#4CAF50"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11" />
 
     <TextView
@@ -80,10 +84,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textColor="#4CAF50"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
 </android.support.constraint.ConstraintLayout>

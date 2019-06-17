@@ -4,18 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5CB6A1DD"
+    android:background="#B1BCBE"
     tools:context=".Activities.dayExcersiceSet">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/DESrecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#ffffff"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#B1BCBE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/DESProgress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/DESrecycler"
+        app:layout_constraintEnd_toEndOf="@+id/DESrecycler"
+        app:layout_constraintStart_toStartOf="@+id/DESrecycler"
+        app:layout_constraintTop_toTopOf="@+id/DESrecycler" />
 </android.support.constraint.ConstraintLayout>

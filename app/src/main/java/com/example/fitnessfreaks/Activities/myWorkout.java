@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.fitnessfreaks.Adapters.WeekAdapter;
 import com.example.fitnessfreaks.DataClasses.weekNo;
@@ -20,7 +22,7 @@ public class myWorkout extends AppCompatActivity implements WeekAdapter.onWeekLi
     private List<weekNo> weekNos = new ArrayList<>();
     WeekAdapter adapter;
     private DatabaseReference mDatabase;
-
+    ProgressBar progressBar;
 
 
     @Override
@@ -33,8 +35,11 @@ public class myWorkout extends AppCompatActivity implements WeekAdapter.onWeekLi
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         adapter = new WeekAdapter(weekNos,this);
         recyclerView.setAdapter(adapter);
+        progressBar = findViewById(R.id.EMProgress);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        progressBar.setVisibility(View.INVISIBLE);
         weekData();
+
 
     }
 
