@@ -21,8 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_bold"
         android:text="TextView"
-        android:textColor="#FAF5F0F0"
+        android:textColor="#161616"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -34,8 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito_bold"
         android:text="Protien   :"
-        android:textColor="#F1E8E8"
+        android:textColor="#161616"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/nutName" />
@@ -46,8 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito_bold"
         android:text="Carbs      :"
-        android:textColor="#FDFFFFFF"
+        android:textColor="#161616"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -58,8 +61,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito_bold"
         android:text="fat            :"
-        android:textColor="#F7FFFFFF"
+        android:textColor="#161616"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -70,8 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito"
         android:text="TextView"
-        android:textColor="#4CAF50"
+        android:textColor="#673AB7"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/nutName" />
 
@@ -81,8 +86,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
+        android:fontFamily="@font/nunito"
         android:text="TextView"
-        android:textColor="#4CAF50"
+        android:textColor="#673AB7"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/nutProtien" />
 
@@ -92,8 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/nunito"
         android:text="TextView"
-        android:textColor="#4CAF50"
+        android:textColor="#673AB7"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/nutCarbs" />
 

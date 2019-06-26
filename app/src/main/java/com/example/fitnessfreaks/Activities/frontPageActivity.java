@@ -11,7 +11,7 @@ import com.example.fitnessfreaks.R;
 public class frontPageActivity extends AppCompatActivity {
 
     private ConstraintLayout Biceps,shoulders,legs,triceps,forearms,calves,abs,back,chest;
-
+    ConstraintLayout set, bmi, list, nutchart, home,search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +31,11 @@ public class frontPageActivity extends AppCompatActivity {
         abs = (ConstraintLayout)findViewById(R.id.Abs);
         back = (ConstraintLayout)findViewById(R.id.Back);
         chest = (ConstraintLayout)findViewById(R.id.Chest);
-
+        set = (ConstraintLayout)findViewById(R.id.FPSets);
+        list = (ConstraintLayout)findViewById(R.id.FPList);
+        nutchart = (ConstraintLayout)findViewById(R.id.FPCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.FPbmi);
+        home = (ConstraintLayout)findViewById(R.id.FPhome);
 
     }
 
@@ -108,7 +112,36 @@ public class frontPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(frontPageActivity.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(frontPageActivity.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(frontPageActivity.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(frontPageActivity.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(frontPageActivity.this,MainActivity.class));
+            }
+        });
 
 
     }

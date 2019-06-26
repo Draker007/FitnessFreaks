@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import com.example.fitnessfreaks.Activities.CheckEexcersiceActivity;
 import com.example.fitnessfreaks.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,6 +45,12 @@ public class instructionexcersice_fragment extends Fragment {
         View v = getView();
         if (v != null){
         final TextView Instruction = (TextView) v.findViewById(R.id.Instruction101);
+           AdView adView = v.findViewById(R.id.banner2);
+            MobileAds.initialize(getContext(),
+                    "ca-app-pub-9245993672547749/2605253595");
+
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView.loadAd(adRequest);
             CheckEexcersiceActivity checkEexcersiceActivity = (CheckEexcersiceActivity) getActivity();
             final String id1 = checkEexcersiceActivity.getid();
             final String type1 = checkEexcersiceActivity.gettype();

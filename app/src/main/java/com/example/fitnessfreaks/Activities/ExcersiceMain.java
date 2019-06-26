@@ -1,34 +1,20 @@
 package com.example.fitnessfreaks.Activities;
 
 import android.app.Dialog;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
-import android.net.Uri;
-import android.net.UrlQuerySanitizer;
-import android.os.AsyncTask;
-import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.fitnessfreaks.Adapters.checkExcersiceAdapter;
 import com.example.fitnessfreaks.Fragments.Em1stFragment;
 import com.example.fitnessfreaks.Fragments.Em2ndFragment;
@@ -38,24 +24,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Map;
-
-import pl.droidsonroids.gif.GifImageView;
 
 public class ExcersiceMain extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private checkExcersiceAdapter adapter;
+    ConstraintLayout set, bmi, list, nutchart, home;
     TextView excersiceName;
     DatabaseReference databaseReference , db;
     ProgressBar progressBar;
@@ -91,6 +67,7 @@ public class ExcersiceMain extends AppCompatActivity {
         progressBar = (ProgressBar)findViewById(R.id.EMProgress);
         Initialse();
        databaseLinking();
+       setonclicklistner();
 
 //        startEx.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -137,6 +114,13 @@ public class ExcersiceMain extends AppCompatActivity {
         excersiceName=(TextView)findViewById(R.id.emName);
         btngonxt = findViewById(R.id.emGonxtbtn);
         btnBack = findViewById(R.id.emBackBtn);
+        set = (ConstraintLayout)findViewById(R.id.EMSets);
+        list = (ConstraintLayout)findViewById(R.id.EMList);
+        nutchart = (ConstraintLayout)findViewById(R.id.EMCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.EMbmi);
+        home = (ConstraintLayout)findViewById(R.id.EMhome);
+
+
 
       //  startEx = findViewById(R.id.showPop);
         day = getIntent().getStringExtra("day");
@@ -173,46 +157,38 @@ public class ExcersiceMain extends AppCompatActivity {
             }
         });
     }
-//    void Showpopup() {
-//
-//        final TextView count;
-//        dialog.setContentView(R.layout.start_excersice_pop);
-//        popimage = (ImageView) dialog.findViewById(R.id.popImage);
-//
-//        count = (TextView) dialog.findViewById(R.id.popCounter);
-//
-//
-//        db.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Map<String, String> postMap = (Map<String, String>) dataSnapshot.getValue();
-//                String name = postMap.get("name");
-//                dialog.setTitle(name);
-//                String image = postMap.get("video");
-//                new CountDownTimer(22000, 1000) { // adjust the milli seconds here
-//
-//                    public void onTick(long millisUntilFinished) {
-//                        String o = String.valueOf(i);
-//                        i=i-1;
-//                        count.setText(o);
-//                    }
-//
-//                    @Override
-//                    public void onFinish() {
-//
-//                    }
-//                }.start();
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//        dialog.show();
-//    }
 
-//    void loadImage(String image){
-//    Glide.with(this).load(image).into(popimage);
-//    }
+void setonclicklistner(){
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ExcersiceMain.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ExcersiceMain.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ExcersiceMain.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ExcersiceMain.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ExcersiceMain.this,MainActivity.class));
+            }
+        });
 
+}
 }

@@ -7,11 +7,202 @@
     android:background="@drawable/backgroiund"
     tools:context=".Activities.frontPageActivity">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/woodbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/FPList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/indicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/FPCharts"
+            app:layout_constraintStart_toEndOf="@+id/FPSets"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/aaa"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/list" />
+
+            <TextView
+                android:id="@+id/aasaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="All Exercises"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aaa" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/FPCharts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/FPbmi"
+            app:layout_constraintStart_toEndOf="@+id/FPList"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/aaasaa"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/nutri" />
+
+            <TextView
+                android:id="@+id/aa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="11dp"
+                android:text="Nutrition Chart"
+                android:textColor="#FFFFFF"
+                app:fontFamily="@font/nunito_bold"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aaasaa" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/FPSets"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/FPList"
+            app:layout_constraintStart_toEndOf="@+id/FPhome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/imageView7a"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/stack" />
+
+            <TextView
+                android:id="@+id/textView3a4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Workout Plans"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7a" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/FPhome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/FPSets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/home" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="4dp"
+                app:fontFamily="@font/nunito_bold"
+                android:text="Home"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/FPbmi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/FPCharts"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bmi" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="BMI Calculator"
+                app:fontFamily="@font/nunito_bold"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,8 +220,7 @@
                 android:id="@+id/biceps_layout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/bg"
-                >
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView"
@@ -38,19 +228,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="serif"
+
                     android:text="BICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
-                    app:fontFamily="serif"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/imageView7aa"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -66,8 +257,7 @@
                 android:id="@+id/shoulder"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/bg"
-                >
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -75,12 +265,12 @@
                     android:layout_height="51dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="48dp"
-                    android:fontFamily="serif"
                     android:text="SHOULDERS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
-                    app:fontFamily="serif"
+                    app:fontFamily="@font/nunito_bold"
+
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,8 +291,7 @@
                 android:id="@+id/Abs"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/bg"
-                >
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView3"
@@ -110,18 +299,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
-                    android:fontFamily="serif"
                     android:text="ABS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
-                    app:fontFamily="serif"
+                    app:fontFamily="@font/nunito_bold"
+
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView9"
-                    android:layout_width="290dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +326,7 @@
                 android:id="@+id/Chest"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/bg" >
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView4"
@@ -145,11 +334,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="24dp"
-                    android:fontFamily="serif"
                     android:text="CHEST"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -179,11 +368,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="serif"
                     android:text="FOREARMS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -205,18 +394,18 @@
                 android:id="@+id/Triceps"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/bg" >
+                android:background="@drawable/bg">
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="serif"
                     android:text="TRICEPS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -246,11 +435,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="serif"
                     android:text="BACK"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -280,11 +469,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginBottom="8dp"
-                    android:fontFamily="serif"
                     android:text="LEGS"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -314,11 +503,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginBottom="4dp"
-                    android:fontFamily="serif"
                     android:text="CALVES"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="#ffffff"
                     android:textSize="24sp"
+                    app:fontFamily="@font/nunito_bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -333,4 +522,5 @@
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
 </android.support.constraint.ConstraintLayout>

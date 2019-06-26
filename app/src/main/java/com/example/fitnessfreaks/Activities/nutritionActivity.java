@@ -1,10 +1,13 @@
 package com.example.fitnessfreaks.Activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.example.fitnessfreaks.Adapters.NutritionAdapter;
 import com.example.fitnessfreaks.DataClasses.NutritionList;
@@ -23,13 +26,19 @@ public class nutritionActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     NutritionAdapter adapter;
-
+    ConstraintLayout set, bmi, list, nutchart, home;
     private List<NutritionList> nutritionLists = new ArrayList<>();
     private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutrition);
+        set = (ConstraintLayout)findViewById(R.id.NSets);
+        list = (ConstraintLayout)findViewById(R.id.NList);
+        nutchart = (ConstraintLayout)findViewById(R.id.NCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.Nbmi);
+        home = (ConstraintLayout)findViewById(R.id.Nhome);
+
         recyclerView = (RecyclerView)findViewById(R.id.nutritionRecycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -37,6 +46,38 @@ public class nutritionActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         NutritionData();
+
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nutritionActivity.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nutritionActivity.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nutritionActivity.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nutritionActivity.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(nutritionActivity.this,MainActivity.class));
+            }
+        });
+
     }
     private void NutritionData(){
         final DatabaseReference databaseReference = mDatabase.child("Nutrition");

@@ -2,6 +2,7 @@ package com.example.fitnessfreaks.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.fitnessfreaks.Adapters.DESadapter;
 import com.example.fitnessfreaks.DataClasses.excersice;
@@ -28,7 +30,9 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
     RecyclerView recyclerView;
     private List<excersice> excersices = new ArrayList<>();
     DESadapter adapter ;
+    TextView details,days;
     private DatabaseReference mdatabase;
+    ConstraintLayout set, bmi, list, nutchart, home;
     ProgressBar progressBar;
     private  List<String> data = new ArrayList<>();
     @Override
@@ -37,6 +41,44 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
         setContentView(R.layout.activity_day_excersice_set);
         recyclerView = (RecyclerView)findViewById(R.id.DESrecycler);
         progressBar = findViewById(R.id.DESProgress);
+        details = (TextView)findViewById(R.id.DESdetail);
+        days = (TextView)findViewById(R.id.DESday);
+        set = (ConstraintLayout)findViewById(R.id.DESSets);
+        list = (ConstraintLayout)findViewById(R.id.DESList);
+        nutchart = (ConstraintLayout)findViewById(R.id.DESCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.DESbmi);
+        home = (ConstraintLayout)findViewById(R.id.DEShome);
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dayExcersiceSet.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dayExcersiceSet.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dayExcersiceSet.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dayExcersiceSet.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(dayExcersiceSet.this,MainActivity.class));
+            }
+        });
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new DESadapter(excersices,this);
@@ -52,11 +94,28 @@ public class dayExcersiceSet extends AppCompatActivity implements DESadapter.OnD
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Map<String, String> map = (Map<String, String>) dataSnapshot.getValue();
+                String d = map.get("detail");
+                details.setText(d);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        days.setText(day);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren() ) {
                     String id = snapshot.getKey();
                     String id1 = "id";
+                    String detail1 = "detail";
                     Log.e(TAG, "onDataChange: "+id);
-                    if (id.equals(id1)) {
+                    if (id.equals(id1) || id.equals(detail1)) {
+
                         continue;
                     }else {
 

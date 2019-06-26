@@ -2,6 +2,7 @@ package com.example.fitnessfreaks.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.fitnessfreaks.Adapters.customExcersiceAdapter;
 import com.example.fitnessfreaks.DataClasses.excersicesCustom;
@@ -31,11 +33,48 @@ public class customExcersiceActivity extends AppCompatActivity implements custom
     private DatabaseReference mDatabase;
     ProgressBar progressBar;
 
+    ConstraintLayout set, bmi, list, nutchart, home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_excersice);
+
         progressBar=findViewById(R.id.CEProgress);
+        set = (ConstraintLayout)findViewById(R.id.CuESets);
+        list = (ConstraintLayout)findViewById(R.id.CuEList);
+        nutchart = (ConstraintLayout)findViewById(R.id.CuECharts);
+        bmi = (ConstraintLayout)findViewById(R.id.CuEbmi);
+        home = (ConstraintLayout)findViewById(R.id.CuEhome);
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(customExcersiceActivity.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(customExcersiceActivity.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(customExcersiceActivity.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(customExcersiceActivity.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(customExcersiceActivity.this,MainActivity.class));
+            }
+        });
         recyclerView = (RecyclerView)findViewById(R.id.customExcersiceRecycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);

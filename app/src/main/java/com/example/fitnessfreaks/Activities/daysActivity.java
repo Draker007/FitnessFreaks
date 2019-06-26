@@ -10,6 +10,9 @@ import android.view.View;
 
 import com.example.fitnessfreaks.R;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,8 +25,9 @@ public class daysActivity extends AppCompatActivity {
     ConstraintLayout sun,mon,tue,wed,thurs,fri,sat;
     DatabaseReference mDatabase;
     String TAG = "Draker";
-
-
+    String id1 = "false";
+    private AdView mAdView;
+    ConstraintLayout set, bmi, list, nutchart, home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,15 @@ public class daysActivity extends AppCompatActivity {
         thurs=(ConstraintLayout)findViewById(R.id.Thursday);
         fri = (ConstraintLayout)findViewById(R.id.Friday);
         sat=(ConstraintLayout)findViewById(R.id.Saturday);
+        set = (ConstraintLayout)findViewById(R.id.DSets);
+        list = (ConstraintLayout)findViewById(R.id.DList);
+        nutchart = (ConstraintLayout)findViewById(R.id.DCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.Dbmi);
+        home = (ConstraintLayout)findViewById(R.id.Dhome);
+    MobileAds.initialize(this,"ca-app-pub-9245993672547749/9806507648");
+        mAdView=(AdView) findViewById(R.id.BannerAd1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         final String name = getIntent().getStringExtra("name");
         final String sex = getIntent().getStringExtra("sex");
@@ -46,11 +59,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -69,6 +82,36 @@ public class daysActivity extends AppCompatActivity {
                 });
             }
         });
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(daysActivity.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(daysActivity.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(daysActivity.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(daysActivity.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(daysActivity.this,MainActivity.class));
+            }
+        });
         mon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,11 +119,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -106,11 +149,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -136,11 +179,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -166,11 +209,10 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -196,11 +238,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id .equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{
@@ -226,11 +268,11 @@ public class daysActivity extends AppCompatActivity {
                 db.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Map<String,Boolean> post = (Map<String, Boolean>)dataSnapshot.getValue();
-                        Boolean id = post.get("id");
+                        Map<String,String> post = (Map<String, String>)dataSnapshot.getValue();
+                        String id = post.get("id");
                         Log.e(TAG, "onDataChange:"+id);
-                        String id1 = "0";
-                        if (id == false){
+
+                        if (id.equals(id1)){
                             Log.e(TAG, "onDataChange: onPoint");
                             startActivity(new Intent(daysActivity.this, dayoffActivity.class));
                         }else{

@@ -1,8 +1,8 @@
 package com.example.fitnessfreaks.Activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -34,7 +34,7 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
     ProgressBar progressBar;
     private DatabaseReference mDatabase;
     public List<String> data = new ArrayList<>();
-
+    ConstraintLayout set, bmi, list, nutchart, home;
 
 
     @Override
@@ -45,7 +45,11 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
         recyclerView = (RecyclerView)findViewById(R.id.excersiceRecycler);
         progressBar = (ProgressBar)findViewById(R.id.ELProgress);
         final String data1 = getIntent().getStringExtra("type");
-
+        set = (ConstraintLayout)findViewById(R.id.ELSets);
+        list = (ConstraintLayout)findViewById(R.id.ELList);
+        nutchart = (ConstraintLayout)findViewById(R.id.ELCharts);
+        bmi = (ConstraintLayout)findViewById(R.id.ELbmi);
+        home = (ConstraintLayout)findViewById(R.id.ELhome);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -54,6 +58,36 @@ public class excersiceListActivity extends AppCompatActivity implements excersic
         recyclerView.setAdapter(adapter);
         mDatabase = FirebaseDatabase.getInstance().getReference();
         excersicedata();
+        set.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(excersiceListActivity.this,excersiceSetActivity.class));
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(excersiceListActivity.this,frontPageActivity.class));
+            }
+        });
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(excersiceListActivity.this, BMIActivity.class));
+            }
+        });
+        nutchart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(excersiceListActivity.this,nutritionActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(excersiceListActivity.this,MainActivity.class));
+            }
+        });
 
     }
 
@@ -76,6 +110,7 @@ Log.d("database","starting");
 //                Uri uri = Uri.parse(image);
                 excersice excersice = new excersice(image,name,id);
                 excersices.add(excersice);
+
 recyclerView.setAdapter(adapter);
 progressBar.setVisibility(View.INVISIBLE);
 
